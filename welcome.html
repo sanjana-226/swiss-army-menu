@@ -68,6 +68,7 @@
       }
 
       #text {
+        font-size: x-large;
         text-align: center;
         color: rgb(0, 0, 0);
         padding: 5px;
@@ -161,28 +162,34 @@
 
       function f_bold() {
         var element1 = document.getElementById("text");
-        // if (element1.style.fontWeight == "normal") {
-        //     element1.style.fontWeight = "bold";
-        // }
-        // else if (element1.style.fontWeight == "bold") {
-        //     element1.style.fontWeight = "normal";
-        // }
-        element1.style.fontWeight = "bold";
+        if (element1.style.fontWeight == "normal") {
+            element1.style.fontWeight = "bold";
+        }
+        else {
+            element1.style.fontWeight = "normal";
+        }
+        // element1.style.fontWeight = "bold";
       }
       function f_italic() {
         var element2 = document.getElementById("text");
-        // if (element2.style.fontStyle == "normal") {
-        //     element2.style.fontStyle = "italic";
-        // }
-        // else if (element2.style.fontStyle == "italic") {
-        //     element2.style.fontStyle = "normal";
-        // }
+        if (element2.style.fontStyle == "normal") {
+            element2.style.fontStyle = "italic";
+        }
+        else  {
+            element2.style.fontStyle = "normal";
+        }
 
-        element2.style.fontStyle = "italic";
+        // element2.style.fontStyle = "italic";
       }
       function f_underline() {
         var element3 = document.getElementById("text");
-        element3.style.textDecoration = "underline";
+        if (element3.style.textDecoration == "none") {
+            element3.style.textDecoration = "underline";
+        }
+        else  {
+            element3.style.textDecoration = "none";
+        }
+        // element3.style.textDecoration = "underline";
       }
 
     </script>
