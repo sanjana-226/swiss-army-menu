@@ -45,13 +45,6 @@
         color: #ddd;
         text-decoration: underline;
       }
-    
-      h1 {
-        text-align: center;
-        color: rgb(0, 0, 0);
-        padding: 5px;
-        font-family: Helvetica, sans-serif; 
-      }
 
       footer {
         text-align: center;
@@ -72,6 +65,13 @@
         background-color: #555;
         color: #ddd;
         text-decoration: underline;
+      }
+
+      #text {
+        text-align: center;
+        color: rgb(0, 0, 0);
+        padding: 5px;
+        font-family: Helvetica, sans-serif;
       }
 
       #wheelDiv {
@@ -159,6 +159,32 @@
         piemenu.createWheel();      
       };
 
+      function f_bold() {
+        var element1 = document.getElementById("text");
+        // if (element1.style.fontWeight == "normal") {
+        //     element1.style.fontWeight = "bold";
+        // }
+        // else if (element1.style.fontWeight == "bold") {
+        //     element1.style.fontWeight = "normal";
+        // }
+        element1.style.fontWeight = "bold";
+      }
+      function f_italic() {
+        var element2 = document.getElementById("text");
+        // if (element2.style.fontStyle == "normal") {
+        //     element2.style.fontStyle = "italic";
+        // }
+        // else if (element2.style.fontStyle == "italic") {
+        //     element2.style.fontStyle = "normal";
+        // }
+
+        element2.style.fontStyle = "italic";
+      }
+      function f_underline() {
+        var element3 = document.getElementById("text");
+        element3.style.textDecoration = "underline";
+      }
+
     </script>
   </head>
   
@@ -168,32 +194,33 @@
         header
       </p>
     </header>
-    <!-- <div id="wheelDiv"></div> -->
 
     <div id="text"> 
-        <h1> <SAM: <span class ="selection">The Swiss Army Menu</span></h1>
+         SAM: The Swiss Army Menu 
     </div>
+
+    <!-- <div id="subWheel" class=""wheelNav400></div> -->
 
     <div
       id="piemenu"
       data-wheelnav
       data-wheelnav-slicepath="DonutSlice"
       data-wheelnav-rotateoff
-      data-wheelnav-navangle="0"
+      data-wheelnav-navangle="30"
       data-wheelnav-cssmode
       data-wheelnav-init
     >
       <div
         data-wheelnav-navitemtext="BOLD"
-        onmouseup='alert("Place your logic here.");'
+        onmouseup="f_bold()"
       ></div>
       <div
         data-wheelnav-navitemtext="ITALIC"
-        onmouseup='alert("Place your logic here.");'
+        onmouseup="f_italic()"
       ></div>
       <div
         data-wheelnav-navitemtext="UNDERLINE"
-        onmouseup='alert("Place your logic here.");'
+        onmouseup="f_underline()"
       ></div>  
     </div>
   </body>
