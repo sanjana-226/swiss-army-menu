@@ -32,7 +32,7 @@
         font-family: Helvetica, sans-serif;
         margin-bottom: 50px;
       }
-
+      
       footer {
         text-align: center;
         background-color: #555;
@@ -83,8 +83,23 @@
         width: 400px;
         margin: auto;
       }
+
+      #piemenu2 > svg {
+        width: 100%;
+        height: 100%;
+      }
+      #piemenu2 {
+        height: 400px;
+        width: 400px;
+        margin: auto;
+      }
+
       @media (max-width: 400px) {
         #piemenu {
+          height: 300px;
+          width: 300px;
+        }
+        #piemenu2 {
           height: 300px;
           width: 300px;
         }
@@ -122,16 +137,55 @@
         font-family: Impact, Charcoal, sans-serif;
         font-size: 24px;
       }
+
+      [class|="wheelnav-piemenu2-slice-basic"] {
+        fill: rgb(134, 144, 204);
+        stroke: black;
+      }
+      [class|="wheelnav-piemenu2-slice-selected"] {
+        fill: rgb(75, 98, 232);
+        stroke: black;
+      }
+      [class|="wheelnav-piemenu2-slice-hover"] {
+        fill: transparent;
+        stroke: black;
+        fill-opacity: 0.77;
+        cursor: pointer;
+      }
+
+      [class|="wheelnav-piemenu2-title-basic"] {
+        fill: #333;
+        stroke: none;
+      }
+      [class|="wheelnav-piemenu2-title-selected"] {
+        fill: rgb(3, 3, 3);
+        stroke: none;
+      }
+      [class|="wheelnav-piemenu2-title-hover"] {
+        fill: #222;
+        stroke: none;
+        cursor: pointer;
+      }
+      [class|="wheelnav-piemenu2-title"] > tspan {
+        font-family: Impact, Charcoal, sans-serif;
+        font-size: 24px;
+      }
     </style>
 
     <script type="text/javascript">
       window.onload = function () {
         var piemenu = new wheelnav("piemenu");
         piemenu.clockwise = false;
-        piemenu.wheelRadius = piemenu.wheelRadius * 0.83;
-        piemenu.spreaderEnable = true ;
+        piemenu.wheelRadius = piemenu.wheelRadius * 1.11;
+        piemenu.spreaderEnable = false;
         piemenu.spreaderRadius = 60;
-        piemenu.createWheel();      
+        piemenu.createWheel(); 
+        
+        var piemenu2 = new wheelnav('piemenu2',piemenu.raphael);
+        piemenu2.clockwise = false;
+        piemenu2.wheelRadius = piemenu2.wheelRadius * 0.44;
+        piemenu2.spreaderEnable = false ;
+        piemenu2.createWheel();
       };
 
       function f_bold() {
@@ -198,6 +252,23 @@
             element5.style.fontSize = "small";
         }
       }
+      function f_style(){
+        alert("inpie2");
+        piemenu2.navItems[0].navItem.hide();
+      }
+      
+      var main1selected = true;
+        piemenu2.navitemtext.navigateFunction = function () {
+        if (main1selected) {
+            piemenu.navitemtext.navItem.hide();
+            piemenu.navitemtext.navItem.hide();
+        }
+        else {
+            piemenu.navitemtext.navItem.show();
+            piemenu.navitemtext.navItem.show();
+        }
+        main1selected = !main1selected;
+};
     </script>
   </head>
   
@@ -212,14 +283,12 @@
          SAM: The Swiss Army Menu 
     </div>
 
-    <!-- <div id="subWheel" class=""wheelNav400></div> -->
-
     <div
       id="piemenu"
       data-wheelnav
       data-wheelnav-slicepath="DonutSlice"
       data-wheelnav-rotateoff
-      data-wheelnav-navangle="30"
+      data-wheelnav-navangle="110"
       data-wheelnav-cssmode
       data-wheelnav-init
     >
@@ -244,6 +313,26 @@
         onmouseup="f_down()"
       ></div>
     </div>
+
+    <div
+      id="piemenu2"
+      data-wheelnav
+      data-wheelnav-slicepath="DonutSlice"
+      data-wheelnav-rotateoff
+      data-wheelnav-navangle="0"
+      data-wheelnav-cssmode
+      data-wheelnav-init
+    >
+    <div
+        data-wheelnav-navitemtext="SIZE"
+        onmouseup="f_size()"
+      ></div>
+      <div
+        data-wheelnav-navitemtext="STYLE"
+        onmouseup="f_style()"
+      ></div>
+       </div>     
+
   </body>
 
     <footer>
