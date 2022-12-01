@@ -19,15 +19,15 @@
 
     <style>
       body {
-        background-color: #ffffff;
+        background-color: #12121f;
         font-family: Helvetica, Arial, sans-serif;
       }
 
       header {
         font-size: large;
         text-align: center;
-        background-color: #555;
-        color: #ddd;
+        background-color: rgb(64, 75, 137);
+        color: rgb(255, 255, 255);
         padding: 5px;
         font-family: Helvetica, sans-serif;
         margin-bottom: 50px;
@@ -40,13 +40,18 @@
         padding: 5px;
         margin-top: 50px;
       }
-
+      p{
+        font-size: large;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        font-family: Helvetica, sans-serif;
+      }
       #text {
         font-size: x-large;
         text-align: center;
-        color: rgb(0, 0, 0);
+        color: rgb(255, 255, 255);
         padding: 5px;
-        font-family: Helvetica, sans-serif;
+        font-family: Verdana ,Georgia, Helvetica, sans-serif;
       }
 
       #wheelDiv {
@@ -79,8 +84,8 @@
         height: 100%;
       }
       #piemenu {
-        height: 400px;
-        width: 400px;
+        height: 500px;
+        width: 500px;
         margin: auto;
       }
 
@@ -121,7 +126,7 @@
       }
 
       [class|="wheelnav-piemenu-title-basic"] {
-        fill: #333;
+        fill: rgb(5, 5, 5);
         stroke: none;
       }
       [class|="wheelnav-piemenu-title-selected"] {
@@ -129,10 +134,11 @@
         stroke: none;
       }
       [class|="wheelnav-piemenu-title-hover"] {
-        fill: #222;
+        fill: rgb(255, 255, 255);
         stroke: none;
         cursor: pointer;
       }
+
       [class|="wheelnav-piemenu-title"] > tspan {
         font-family: Impact, Charcoal, sans-serif;
         font-size: 24px;
@@ -147,7 +153,7 @@
         stroke: black;
       }
       [class|="wheelnav-piemenu2-slice-hover"] {
-        fill: transparent;
+        fill: rgb(195, 232, 231);
         stroke: black;
         fill-opacity: 0.77;
         cursor: pointer;
@@ -179,14 +185,12 @@
         piemenu.wheelRadius = piemenu.wheelRadius * 1.1;
         piemenu.spreaderEnable = false;
         piemenu.spreaderRadius = 60;
-        // piemenu.multiSelect = true; not super useful
         piemenu.createWheel(["1", "2", "3","4","5"]); 
         
         piemenu2 = new wheelnav('piemenu2',piemenu.raphael);
         piemenu2.clockwise = false;
         piemenu2.wheelRadius = piemenu2.wheelRadius * 0.44;
-        piemenu2.spreaderEnable = true ;
-        // piemenu2.multiSelect = true;
+        piemenu2.spreaderEnable = false ;
         piemenu2.createWheel(["1","2"]);
         piemenu.navItems[3].navItem.hide();
         piemenu.navItems[6].navItem.hide();
@@ -283,14 +287,30 @@
   <body>
     <header>
       <p>
-        header
+        2022_1 || HCI Project Demo || 2020A7PS1207P (Sanjana Padavala)
       </p>
     </header>
 
+    <p>
+        INSTRUCTIONS <br><br>
+        1) Click on Main Menu options to open Submenus: Style and Size <br>
+        2) Style options : Bold, Underline, and Italic (multiselect possible) <br>
+        3) Size options : Size Increase and Size Decrease
+
+        <br><br>
+
+        <a href="https://github.com/sanjana-226/swiss-army-menu">SOURCE CODE</a> <br><br>
+        <a href="https://docs.google.com/document/d/18US7Q0bc-dc5JH8CBShdbdmiDmL_qirliEbipqNFVHc/edit?usp=sharing">PROJECT REPORT</a> <br>
+        
+
+    </p>
+    <hr> <br>
+
+    <p>SAMPLE TEXT:</p>
     <div id="text"> 
-         SAM: The Swiss Army Menu
+        Lorem ipsum dolor sit amet <br> 
     </div>
-    <br><br><br>
+    
     <div
       id="piemenu"
       data-wheelnav
@@ -348,12 +368,6 @@
         onmouseup="f_style()"
       ></div>
        </div>     
-
   </body>
 
-    <footer>
-        <p>
-            footer
-        </p>
-    </footer>
 </html>
