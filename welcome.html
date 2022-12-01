@@ -42,7 +42,7 @@
       }
 
       #text {
-        font-size: large;
+        font-size: x-large;
         text-align: center;
         color: rgb(0, 0, 0);
         padding: 5px;
@@ -163,11 +163,40 @@
       }
       function f_up() {
         var element4 = document.getElementById("text");
-        element4.style.fontSize = "larger";
+        if (element4.style.fontSize == "x-large"){
+            element4.style.fontSize = "xx-large";
+        }
+        else if (element4.style.fontSize == "large"){
+            element4.style.fontSize = "x-large";
+        }
+        else if (element4.style.fontSize == "medium"){
+            element4.style.fontSize = "large";
+        }
+        else if (element4.style.fontSize == "small"){
+            element4.style.fontSize = "medium";
+        }
+        else {
+            element4.style.fontSize = "xx-large";
+        }
+        
       }
       function f_down() {
         var element5 = document.getElementById("text");
-            element5.style.fontSize = "smaller";
+        if (element5.style.fontSize == "xx-large"){
+            element5.style.fontSize = "x-large";
+        }
+        else if (element5.style.fontSize == "x-large"){
+            element5.style.fontSize = "large";
+        }
+        else if (element5.style.fontSize == "large"){
+            element5.style.fontSize = "medium";
+        }
+        else if (element5.style.fontSize == "medium"){
+            element5.style.fontSize = "small";
+        }
+        else {
+            element5.style.fontSize = "small";
+        }
       }
     </script>
   </head>
