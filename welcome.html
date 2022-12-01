@@ -42,7 +42,7 @@
       }
 
       #text {
-        font-size: xx-large;
+        font-size: large;
         text-align: center;
         color: rgb(0, 0, 0);
         padding: 5px;
@@ -92,14 +92,14 @@
 
       [class|="wheelnav-piemenu-slice-basic"] {
         fill: #f0db71;
-        stroke: none;
+        stroke: beige;
       }
       [class|="wheelnav-piemenu-slice-selected"] {
         fill: #e9c823;
-        stroke: none;
+        stroke: beige;
       }
       [class|="wheelnav-piemenu-slice-hover"] {
-        fill: #e7e8d0;
+        fill: beige;
         stroke: none;
         fill-opacity: 0.77;
         cursor: pointer;
@@ -161,6 +161,14 @@
             element3.style.textDecoration = "none";
         }
       }
+      function f_up() {
+        var element4 = document.getElementById("text");
+        element4.style.fontSize = "larger";
+      }
+      function f_down() {
+        var element5 = document.getElementById("text");
+            element5.style.fontSize = "smaller";
+      }
     </script>
   </head>
   
@@ -198,6 +206,14 @@
         data-wheelnav-navitemtext="UNDERLINE"
         onmouseup="f_underline()"
       ></div>  
+      <div
+        data-wheelnav-navitemtext="UP"
+        onmouseup="f_up()"
+      ></div>
+      <div
+        data-wheelnav-navitemtext="DOWN"
+        onmouseup="f_down()"
+      ></div>
     </div>
   </body>
 
